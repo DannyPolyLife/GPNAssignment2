@@ -388,7 +388,7 @@ if(keyboard_check(vk_anykey))
 
 //Checks if player clicked on Lantern and is in range
 if(mouse_check_button_pressed(mb_left) &amp;&amp; position_meeting(mouse_x,mouse_y,obj_lantern) &amp;&amp; (distance_to_point(mouse_x,mouse_y) &lt; (room_width/2))){
-    dashingLantern = collision_circle(mouse_x, mouse_y, 35, obj_lantern, false, false); // Get selected Lantern Instance ID
+    dashingLantern = collision_circle(mouse_x, mouse_y, 20, obj_lantern, false, false); // Get selected Lantern Instance ID
     
     //Checks if Lantern is disabled
     if (dashingLantern &amp;&amp; dashingLantern.disable == false &amp;&amp; dashingLantern.rise == false)
@@ -427,7 +427,7 @@ if(mouse_check_button_pressed(mb_left) &amp;&amp; position_meeting(mouse_x,mouse
             <string>///Sticking To Lantern
 // Developer : Shared
 
-stuckLantern = collision_circle(x, y, 35, obj_lantern, false, false) // Get currently colliding Lantern
+stuckLantern = collision_circle(x, y, 20, obj_lantern, false, false) // Get currently colliding Lantern
 // if current selected lantern is same as colliding lantern and is dashing
 if((stuckLantern == dashingLantern) &amp;&amp; dashing){
     stuckLantern.image_index = 1; // Animation
