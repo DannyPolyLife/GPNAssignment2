@@ -76,8 +76,10 @@ if (disable == true)
     gravity = 0.75; //Enable gravity for it to fall
 }
 //Once return to original position, stop rising
-else if (distance_to_point(position[0],position[1]) == 0)
+else if (distance_to_point(position[0],position[1]) &lt;= 3)
 {
+    x = position[0];
+    y = position[1];
     rise = false;
 }
 //If rising

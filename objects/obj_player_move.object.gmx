@@ -52,10 +52,14 @@ sticking = false; //Hanging on Lantern
 dashing = false; //Dashing to Lantern
 dashingOut = false; //Dashing away from Lantern
 stuckon = false; // Checks for collision errors
+stuckLantern = noone; //Declare of stuckLantern
 dashingLantern = noone; //Currently selected Lantern
+
 
 //Portal
 canCreatePortal = true;
+
+
 
 
 
@@ -916,19 +920,21 @@ draw_self()
 //If player is on the Lantern
 if(sticking)
 {
-    //If distance is more than dash out distance (estimate)
-    if(point_distance(x,y,mouse_x,mouse_y) &gt; 96)
+    if(stuckLantern)
     {
-        direction = point_direction(x,y,mouse_x,mouse_y)
-        draw_line_width_colour(stuckLantern.x,stuckLantern.y,x + lengthdir_x(96, direction), y + lengthdir_y(96, direction),5,c_yellow,c_red);
+        //If distance is more than dash out distance (estimate)
+        if(point_distance(x,y,mouse_x,mouse_y) &gt; 96)
+        {
+            direction = point_direction(x,y,mouse_x,mouse_y)
+            draw_line_width_colour(stuckLantern.x,stuckLantern.y,x + lengthdir_x(96, direction), y + lengthdir_y(96, direction),5,c_yellow,c_red);
+            
+        }
+        else
+        { 
+            draw_line_width_colour(stuckLantern.x,stuckLantern.y,mouse_x, mouse_y,5,c_yellow,c_red);
         
+        }
     }
-    else
-    { 
-        draw_line_width_colour(stuckLantern.x,stuckLantern.y,mouse_x, mouse_y,5,c_yellow,c_red);
-    
-    }
-    
 }
 </string>
           </argument>
