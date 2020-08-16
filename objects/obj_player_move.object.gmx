@@ -357,6 +357,11 @@ if(speed = 0)
     image_index = 3
 }
 
+if(keyboard_check(vk_anykey))
+{
+    global.dialogFinished = true; 
+}
+
     
 </string>
           </argument>

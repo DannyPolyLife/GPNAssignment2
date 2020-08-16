@@ -35,7 +35,7 @@ else{ levelThreeDialoguePlayed = false; }
 if(!levelDialoguePlayed)
 {
     scr_createDialogue(2);
-}else{global.dialogFinished = true;}</code>
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
